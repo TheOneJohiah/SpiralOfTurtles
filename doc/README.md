@@ -1,5 +1,4 @@
 # SpiralOfTurtles
-
 A control module for managing a swarm of ComputerCraft Tweaked turtles
 
 # Turtle tests
@@ -12,6 +11,5 @@ Run 'cmake' inside 'SpiralOfTurtles/build'
 Run 'ninja' inside 'SpiralOfTurtles/build'
 To launch the program, run './SpiralOfTurtles/build/SpiralOfTurtles"
 
-## Change Log
-
+# Changelog
 A full list of changes in each version can be found in the [Change Log](changelog.md)
