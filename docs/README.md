@@ -12,7 +12,7 @@ A number of test programs for turtles are available on pastebin
 
 Requires CMake and ninja
 
-Run 'cmake' inside 'SpiralOfTurtles/build'
+Run 'cmake' inside 'SpiralOfTurtles/build' with param ../ to compile from root level
 
 Run 'ninja' inside 'SpiralOfTurtles/build'
 

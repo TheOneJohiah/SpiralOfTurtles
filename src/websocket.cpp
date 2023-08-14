@@ -43,9 +43,17 @@ int main()
 				// All connected clients are available in an std::set. See the broadcast cpp example.
 				// Second parameter tells whether we are sending the message in binary or text mode.
 				// Here we send it in the same mode as it was received.
+
+            //Now modified to send pong if the turtle sends ping
+            //Otherwise, echo server
 				std::cout << "Received: " << msg->str << std::endl;
 
-				webSocket.send(msg->str, msg->binary);
+            if (msg->str == "ping"){
+               webSocket.send("pong", msg->binary);
+            }
+            else {
+               webSocket.send(msg->str, msg->binary);
+            }
 			}
 		});
 
