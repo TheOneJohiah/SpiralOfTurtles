@@ -10,10 +10,8 @@ int main()
 
 	server.setOnClientMessageCallback(
 		[](std::shared_ptr<ix::ConnectionState> connectionState,
-		ix::WebSocket & webSocket,
-		const ix::WebSocketMessagePtr & msg)
+		ix::WebSocket & webSocket, const ix::WebSocketMessagePtr & msg)
 		{
-
 			// The ConnectionState object contains information about the connection,
 			// at this point only the client ip address and the port.
 			std::cout << "Remote ip: " << connectionState->getRemoteIp() << std::endl;
@@ -70,7 +68,8 @@ int main()
 
 	// Run the server in the background. Server can be stoped by calling server.stop()
 	server.start();
-
-	// Block until server.stop() is called.
-	server.wait();
+   
+   //Comment out server.wait to close the code after user interactivity loop ends
+   server.wait();
+   server.stop();
 }
