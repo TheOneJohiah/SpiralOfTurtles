@@ -1,4 +1,4 @@
-local ws = http.websocket("192.168.0.121:42069")
+local ws = http.websocket("192.168.0.188:42069")
 
 print(ws)
 
