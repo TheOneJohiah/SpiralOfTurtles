@@ -35,6 +35,10 @@ int main()
 					std::cout << "\t" << it.first << ": " << it.second << std::endl;
 				}
 			}
+			else if (msg->type == ix::WebSocketMessageType::Close)
+			{
+				std::cout << "Client id " << connectionState->getId() << " disconnected" << std::endl;
+			}
 			else if (msg->type == ix::WebSocketMessageType::Message)
 			{
 				// For an echo server, we just send back to the client whatever was received by the server
@@ -42,16 +46,16 @@ int main()
 				// Second parameter tells whether we are sending the message in binary or text mode.
 				// Here we send it in the same mode as it was received.
 
-            //Now modified to send pong if the turtle sends ping
-            //Otherwise, echo server
-				std::cout << "Received: " << msg->str << std::endl;
+				//Now modified to send pong if the turtle sends ping
+				//Otherwise, echo server
+					std::cout << "Received: " << msg->str << std::endl;
 
-            if (msg->str == "ping"){
-               webSocket.send("pong", msg->binary);
-            }
-            else {
-               webSocket.send(msg->str, msg->binary);
-            }
+				if (msg->str == "ping"){
+					webSocket.send("pong", msg->binary);
+				}
+				else {
+					webSocket.send(msg->str, msg->binary);
+				}
 			}
 		});
 
