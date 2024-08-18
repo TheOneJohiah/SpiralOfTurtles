@@ -48,10 +48,13 @@ int main()
 
 				//Now modified to send pong if the turtle sends ping
 				//Otherwise, echo server
-					std::cout << "Received: " << msg->str << std::endl;
+				std::cout << "Received: " << msg->str << std::endl;
 
 				if (msg->str == "ping"){
 					webSocket.send("pong", msg->binary);
+				}
+				else if (){
+
 				}
 				else {
 					webSocket.send(msg->str, msg->binary);
